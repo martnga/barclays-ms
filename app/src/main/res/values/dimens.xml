@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pad_5dp">5dp</dimen>
+    <dimen name="pad_10dp">10dp</dimen>
+    <dimen name="pad_15dp">15dp</dimen>
+    <dimen name="pad_20dp">20dp</dimen>
+    <dimen name="pad_25dp">25dp</dimen>
+    <dimen name="pad_55dp">55dp</dimen>
+    <dimen name="pad_190dp">190dp</dimen>
+
+
+    <dimen name="text_20">20sp</dimen>
+
+    <dimen name="dimen_200">200dp</dimen>
+</resources>

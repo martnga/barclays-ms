@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:layout_marginStart="@dimen/pad_15dp"
+        android:layout_marginEnd="@dimen/pad_15dp"
+        android:layout_marginTop="@dimen/pad_190dp"
+        android:hint="Account Number"
+        android:ems="10"
+        android:id="@+id/account_number_editText"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:layout_marginStart="@dimen/pad_15dp"
+        android:layout_marginEnd="@dimen/pad_15dp"
+        android:layout_marginTop="@dimen/pad_10dp"
+        android:hint="PIN"
+        android:ems="10"
+        android:id="@+id/pin_editText"/>
+
+    <Button
+        android:layout_width="@dimen/dimen_200"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="@dimen/text_20"
+        android:id="@+id/login_button"
+        android:padding="@dimen/pad_20dp"
+        android:layout_marginTop="@dimen/pad_15dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
