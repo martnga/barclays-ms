@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Barclays MS</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="tabs">
+        <item>Pendo</item>
+        <item>Caltech</item>
+    </string-array>
 </resources>
