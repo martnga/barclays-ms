@@ -2,9 +2,11 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:layout_width="fill_parent"
                   android:layout_height="fill_parent"
-                  android:orientation="vertical" >
+                  android:orientation="vertical"
+    android:layout_marginEnd="@dimen/pad_15dp"
+    android:layout_marginStart="@dimen/pad_15dp">
 
-        <LinearLayout
+        <!--<LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -27,12 +29,13 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:textSize="16sp" />
-        </LinearLayout>
+        </LinearLayout>-->
 
         <ListView
             android:id="@+id/listMessages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:layout_weight="1"
             android:scrollbars="horizontal" />
 
@@ -44,21 +47,23 @@
             android:orientation="horizontal" >
 
             <EditText
-                android:id="@+id/chatET"
+                android:id="@+id/deposit_amount_txt"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="top"
-                android:hint="Type to compose"
+                android:hint="Type amount to deposit"
                 android:scrollHorizontally="true" >
             </EditText>
 
-            <Button
-                android:id="@+id/sendBtn"
+            <ImageView
+                android:id="@+id/deposit_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ic_send_black_24dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
+                android:paddingLeft="@dimen/pad_15dp"
                 android:layout_marginTop="5dp"
                 android:text="Send"
                 android:textStyle="bold" />

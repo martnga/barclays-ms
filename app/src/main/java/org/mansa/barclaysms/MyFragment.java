@@ -33,20 +33,20 @@ public class MyFragment extends Fragment {
 
         View layout = inflater.inflate(R.layout.my_fragment, container, false);
         // Get ListView object from xml
-        listView = (ListView) layout.findViewById(R.id.list);
-        TextView textView = (TextView) layout.findViewById(R.id.tabFragmentText);
+        listView = (ListView) layout.findViewById(R.id.listMessages);
+        //TextView textView = (TextView) layout.findViewById(R.id.tabFragmentText);
         Bundle bundle = getArguments();
 
-        if (bundle != null) {
+        /*if (bundle != null) {
 
             textView.setText("You are on Page " + bundle.getInt("position"));
-        }
+        }*/
 
 
         // Defined Array values to show in ListView
         String[] values = new String[] {
-                "Request Statement",
-                "Deposit",
+               /* "Request Statement",
+                "Deposit"*/
         };
 
         // Define a new Adapter
@@ -63,7 +63,7 @@ public class MyFragment extends Fragment {
         listView.setAdapter(adapter);
 
         // ListView Item Click Listener
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       /* listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
@@ -83,7 +83,7 @@ public class MyFragment extends Fragment {
 
             }
 
-        });
+        });*/
 
 
         return layout;
