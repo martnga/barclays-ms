@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="pad_2dp">2dp</dimen>
     <dimen name="pad_5dp">5dp</dimen>
+    <dimen name="pad_7dp">7dp</dimen>
     <dimen name="pad_10dp">10dp</dimen>
     <dimen name="pad_15dp">15dp</dimen>
     <dimen name="pad_20dp">20dp</dimen>
     <dimen name="pad_25dp">25dp</dimen>
+    <dimen name="pad_30dp">30dp</dimen>
     <dimen name="pad_55dp">55dp</dimen>
     <dimen name="pad_190dp">190dp</dimen>
 
@@ -17,6 +20,9 @@
 
 
     <dimen name="text_20">20sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_15">15sp</dimen>
 
     <dimen name="dimen_200">200dp</dimen>
 </resources>

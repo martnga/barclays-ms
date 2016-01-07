@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Barclays MS</string>
     <string name="action_settings">Settings</string>
+    <string name="type_msg">Type Amount To Deposit</string>
 
     <string-array name="tabs">
         <item>Pendo</item>
