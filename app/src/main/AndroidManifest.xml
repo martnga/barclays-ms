@@ -7,18 +7,20 @@
     <application
         android:name=".Application"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/barclays"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
 
-        <activity android:name=".Chamas">
+        <activity android:name=".Account"
+                  >
             <intent-filter>
                <action android:name="android.intent.action.MAIN" />
 
                <category android:name="android.intent.category.LAUNCHER" />
            </intent-filter>
         </activity>
+
 
         <meta-data
             android:name="com.parse.APPLICATION_ID"

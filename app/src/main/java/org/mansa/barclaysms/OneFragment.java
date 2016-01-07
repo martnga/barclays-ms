@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -32,8 +33,8 @@ public class OneFragment extends Fragment{
     int mPotSize = 10000;
     String mNotification1 = "You have deposited Ksh ";
     String mNotification2 = "Your remaining Balance is Ksh ";
-    String mNotification3 = "Current Pendo Pot Amount is Ksh ";
-    int chamaPot = mPotSize * 12;
+    String mNotification3 = "Current Pendo Chama Pot Amount is Ksh ";
+    int chamaPot = mPotSize * 12 - 4567;
     int status = 0;
 
     public OneFragment() {
@@ -44,12 +45,12 @@ public class OneFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
 
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_one, container, false);
@@ -68,7 +69,6 @@ public class OneFragment extends Fragment{
             @Override
             public void onClick(View v) {
               mAmountSent = mDepositAmountEditTxt.getText().toString().trim();
-                int number = 0;
                 if(!mAmountSent.isEmpty()){
                     String mBalance = String.format("%,d",  mPotSize - Integer.parseInt(mAmountSent));
                     String mPotBalance = String.format("%,d",  chamaPot + Integer.parseInt(mAmountSent));
@@ -79,11 +79,13 @@ public class OneFragment extends Fragment{
                         mDepositAmountEditTxt.setText("");
                         mOneCardView.setVisibility(View.VISIBLE);
                         status ++;
-                        number += 2;
-                    }else if(number == 2){
-                        mUpTextTwo.setText(mNotification1 + mAmountSent + "\n" + mNotification2 + mBalance);
+                    }else if(status == 1){
+                        mUpTextTwo.setText(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
+                                + mNotification3 + mPotBalance + ".");
                         mBottomTextTwo.setText(setTime());
-                        number += 1;
+                        mDepositAmountEditTxt.setText("");
+                        mTwoCardView.setVisibility(View.VISIBLE);
+                        status += 1;
                     }
                 }
             }

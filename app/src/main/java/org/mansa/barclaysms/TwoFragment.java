@@ -28,11 +28,11 @@ public class TwoFragment extends Fragment {
     EditText mDepositAmountEditTxt;
     Button mSendButton;
     String mAmountSent;
-    int mPotSize = 10000;
-    String mNotification1 = "You have deposited KSH ";
-    String mNotification2 = "Remaining Balance: ";
-    String mNotification3 = "Current Pendo Pot Amount is Ksh ";
-    int chamaPot = mPotSize * 12;
+    int mPotSize = 5000;
+    String mNotification1 = "You have deposited Ksh ";
+    String mNotification2 = "Your remaining Balance is Ksh ";
+    String mNotification3 = "Current Vinnas Chama Pot Amount is Ksh ";
+    int chamaPot = mPotSize * 12 - 4567;
     int status = 0;
 
     public TwoFragment() {
@@ -63,7 +63,6 @@ public class TwoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mAmountSent = mDepositAmountEditTxt.getText().toString().trim();
-                int number = 0;
                 if(!mAmountSent.isEmpty()){
                     String mBalance = String.format("%,d",  mPotSize - Integer.parseInt(mAmountSent));
                     String mPotBalance = String.format("%,d",  chamaPot + Integer.parseInt(mAmountSent));
@@ -74,11 +73,13 @@ public class TwoFragment extends Fragment {
                         mDepositAmountEditTxt.setText("");
                         mOneCardView.setVisibility(View.VISIBLE);
                         status ++;
-                        number += 2;
-                    }else if(number == 2){
-                        mUpTextTwo.setText(mNotification1 + mAmountSent + "\n" + mNotification2 + mBalance);
+                    }else if(status == 1){
+                        mUpTextTwo.setText(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
+                                + mNotification3 + mPotBalance + ".");
                         mBottomTextTwo.setText(setTime());
-                        number += 1;
+                        mDepositAmountEditTxt.setText("");
+                        mTwoCardView.setVisibility(View.VISIBLE);
+                        status += 1;
                     }
                 }
             }

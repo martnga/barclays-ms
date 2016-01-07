@@ -404,6 +404,7 @@
             android:id="@+id/deposit_amount_txt"
             style="@style/edittext_msg"
             android:layout_width="0dp"
+            android:inputType="numberSigned"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/type_msg" >
