@@ -1,22 +1,24 @@
-<RelativeLayout
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     >
 
+
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
         >
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                       xmlns:tools="http://schemas.android.com/tools"
                       android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:scrollbars="vertical"
-                      android:verticalScrollbarPosition="right"
+                      android:layout_height="wrap_content"
                       android:background="#f1f1f1"
                       android:orientation="vertical"
                       tools:context="org.mansa.barclaysms.OneFragment">
@@ -64,174 +66,6 @@
             </android.support.v7.widget.CardView>
 
 
-
-            <android.support.v7.widget.CardView
-                android:layout_marginTop="@dimen/pad_10dp"
-                android:layout_gravity="end"
-                android:layout_marginStart="@dimen/pad_10dp"
-                android:layout_marginEnd="@dimen/pad_10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:background="@color/ColorLightBlue2"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:textSize="@dimen/text_15"
-                        android:text="this lorem ipsum this is all that is needed to"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_7dp"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:text="this lorem ipsum "
-                        android:textSize="@dimen/text_14"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_5dp"
-                        android:textAlignment="viewEnd"
-                        android:paddingBottom="@dimen/pad_7dp"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_marginTop="@dimen/pad_10dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="@dimen/pad_10dp"
-                android:layout_marginEnd="@dimen/pad_10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:background="@color/ColorLightBlue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:textSize="@dimen/text_15"
-                        android:text="this lorem ipsum this is all that is needed to"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_7dp"
-                        />
-
-                    <TextView
-                        android:background="@color/ColorLightBlue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:text="this lorem ipsum "
-                        android:textSize="@dimen/text_14"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_5dp"
-                        android:textAlignment="viewEnd"
-                        android:paddingBottom="@dimen/pad_7dp"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_marginTop="@dimen/pad_10dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="@dimen/pad_10dp"
-                android:layout_marginEnd="@dimen/pad_10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:background="@color/ColorLightBlue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:textSize="@dimen/text_15"
-                        android:text="this lorem ipsum this is all that is needed to"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_7dp"
-                        />
-
-                    <TextView
-                        android:background="@color/ColorLightBlue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:text="this lorem ipsum "
-                        android:textSize="@dimen/text_14"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_5dp"
-                        android:textAlignment="viewEnd"
-                        android:paddingBottom="@dimen/pad_7dp"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_marginTop="@dimen/pad_10dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="@dimen/pad_10dp"
-                android:layout_marginEnd="@dimen/pad_10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:background="@color/ColorLightBlue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:textSize="@dimen/text_15"
-                        android:text="this lorem ipsum this is all that is needed to"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_7dp"
-                        />
-
-                    <TextView
-                        android:background="@color/ColorLightBlue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:text="this lorem ipsum "
-                        android:textSize="@dimen/text_14"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_5dp"
-                        android:textAlignment="viewEnd"
-                        android:paddingBottom="@dimen/pad_7dp"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
             <android.support.v7.widget.CardView
                 android:layout_marginTop="@dimen/pad_25dp"
                 android:layout_width="wrap_content"
@@ -251,7 +85,6 @@
                     android:paddingBottom="@dimen/pad_2dp"/>
             </android.support.v7.widget.CardView>
 
-
             <android.support.v7.widget.CardView
                 android:layout_marginTop="@dimen/pad_10dp"
                 android:layout_gravity="end"
@@ -293,6 +126,174 @@
 
             </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="@dimen/pad_10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/pad_10dp"
+                android:layout_marginEnd="@dimen/pad_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:background="@color/ColorLightBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorCardText"
+                        android:textSize="@dimen/text_15"
+                        android:text="this lorem ipsum this is all that is needed to"
+                        android:paddingRight="@dimen/pad_10dp"
+                        android:paddingLeft="@dimen/pad_10dp"
+                        android:paddingTop="@dimen/pad_7dp"
+                        />
+
+                    <TextView
+                        android:background="@color/ColorLightBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorCardText"
+                        android:text="this lorem ipsum "
+                        android:textSize="@dimen/text_14"
+                        android:paddingRight="@dimen/pad_10dp"
+                        android:paddingLeft="@dimen/pad_10dp"
+                        android:paddingTop="@dimen/pad_5dp"
+                        android:textAlignment="viewEnd"
+                        android:paddingBottom="@dimen/pad_7dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="@dimen/pad_10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/pad_10dp"
+                android:layout_marginEnd="@dimen/pad_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:background="@color/ColorLightBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorCardText"
+                        android:textSize="@dimen/text_15"
+                        android:text="this lorem ipsum this is all that is needed to"
+                        android:paddingRight="@dimen/pad_10dp"
+                        android:paddingLeft="@dimen/pad_10dp"
+                        android:paddingTop="@dimen/pad_7dp"
+                        />
+
+                    <TextView
+                        android:background="@color/ColorLightBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorCardText"
+                        android:text="this lorem ipsum "
+                        android:textSize="@dimen/text_14"
+                        android:paddingRight="@dimen/pad_10dp"
+                        android:paddingLeft="@dimen/pad_10dp"
+                        android:paddingTop="@dimen/pad_5dp"
+                        android:textAlignment="viewEnd"
+                        android:paddingBottom="@dimen/pad_7dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="@dimen/pad_10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/pad_10dp"
+                android:layout_marginEnd="@dimen/pad_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:background="@color/ColorLightBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorCardText"
+                        android:textSize="@dimen/text_15"
+                        android:text="this lorem ipsum this is all that is needed to"
+                        android:paddingRight="@dimen/pad_10dp"
+                        android:paddingLeft="@dimen/pad_10dp"
+                        android:paddingTop="@dimen/pad_7dp"
+                        />
+
+                    <TextView
+                        android:background="@color/ColorLightBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorCardText"
+                        android:text="this lorem ipsum "
+                        android:textSize="@dimen/text_14"
+                        android:paddingRight="@dimen/pad_10dp"
+                        android:paddingLeft="@dimen/pad_10dp"
+                        android:paddingTop="@dimen/pad_5dp"
+                        android:textAlignment="viewEnd"
+                        android:paddingBottom="@dimen/pad_7dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="@dimen/pad_10dp"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/pad_10dp"
+                android:layout_marginEnd="@dimen/pad_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/ColorLightBlue2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorCardText"
+                        android:textSize="@dimen/text_15"
+                        android:text="this lorem ipsum this is all that is needed to"
+                        android:paddingRight="@dimen/pad_10dp"
+                        android:paddingLeft="@dimen/pad_10dp"
+                        android:paddingTop="@dimen/pad_7dp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorCardText"
+                        android:text="this lorem ipsum "
+                        android:textSize="@dimen/text_14"
+                        android:paddingRight="@dimen/pad_10dp"
+                        android:paddingLeft="@dimen/pad_10dp"
+                        android:paddingTop="@dimen/pad_5dp"
+                        android:textAlignment="viewEnd"
+                        android:paddingBottom="@dimen/pad_7dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
 
 
             <android.support.v7.widget.CardView
@@ -340,6 +341,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <android.support.v7.widget.CardView
                 android:id="@+id/card_two"
                 android:layout_marginTop="@dimen/pad_10dp"
@@ -385,159 +387,27 @@
 
             </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_three"
-                android:layout_marginTop="@dimen/pad_10dp"
-                android:layout_gravity="end"
-                android:layout_marginStart="@dimen/pad_10dp"
-                android:visibility="invisible"
-                android:layout_marginEnd="@dimen/pad_10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:background="@color/ColorLightBlue2"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/up_txt_three"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:textSize="@dimen/text_15"
-                        android:text="this lorem ipsum this is all that is needed to"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_7dp"
-                        />
-
-                    <TextView
-                        android:id="@+id/down_txt_three"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:text="this lorem ipsum "
-                        android:textSize="@dimen/text_14"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_5dp"
-                        android:textAlignment="viewEnd"
-                        android:paddingBottom="@dimen/pad_7dp"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_four"
-                android:layout_marginTop="@dimen/pad_10dp"
-                android:layout_gravity="end"
-                android:layout_marginStart="@dimen/pad_10dp"
-                android:visibility="invisible"
-                android:layout_marginEnd="@dimen/pad_10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:background="@color/ColorLightBlue2"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/up_txt_four"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:textSize="@dimen/text_15"
-                        android:text="this lorem ipsum this is all that is needed to"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_7dp"
-                        />
-
-                    <TextView
-                        android:id="@+id/down_txt_four"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:text="this lorem ipsum "
-                        android:textSize="@dimen/text_14"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_5dp"
-                        android:textAlignment="viewEnd"
-                        android:paddingBottom="@dimen/pad_7dp"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_five"
-                android:layout_marginTop="@dimen/pad_10dp"
-                android:layout_gravity="end"
-                android:layout_marginStart="@dimen/pad_10dp"
-                android:visibility="invisible"
-                android:layout_marginEnd="@dimen/pad_10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:background="@color/ColorLightBlue2"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/up_txt_five"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:textSize="@dimen/text_15"
-                        android:text="this lorem ipsum this is all that is needed to"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_7dp"
-                        />
-
-                    <TextView
-                        android:id="@+id/down_txt_five"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/ColorCardText"
-                        android:text="this lorem ipsum "
-                        android:textSize="@dimen/text_14"
-                        android:paddingRight="@dimen/pad_10dp"
-                        android:paddingLeft="@dimen/pad_10dp"
-                        android:paddingTop="@dimen/pad_5dp"
-                        android:textAlignment="viewEnd"
-                        android:paddingBottom="@dimen/pad_7dp"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
         </LinearLayout>
 
     </ScrollView>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
         android:padding="@dimen/pad_5dp"
-        tools:context=".OneFragment"
-        android:layout_alignParentBottom="true">
+        tools:context=".OneFragment">
 
 
         <EditText
             android:id="@+id/deposit_amount_txt"
             style="@style/edittext_msg"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/type_msg" >
+
 
         </EditText>
 
@@ -551,5 +421,4 @@
     </LinearLayout>
 
 
-
-</RelativeLayout>
+</LinearLayout>

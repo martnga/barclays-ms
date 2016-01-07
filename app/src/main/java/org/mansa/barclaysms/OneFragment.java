@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -22,21 +22,19 @@ public class OneFragment extends Fragment{
 
     CardView mOneCardView;
     CardView mTwoCardView;
-    CardView mThreeCardView;
-    CardView mFourCardView;
-    CardView mFiveCardView;
     TextView mUpTextOne;
     TextView mUpTextTwo;
-    TextView mUpTextThree;
-    TextView mUpTextFive;
-    TextView mUpTextFour;
     TextView mBottomTextOne;
     TextView mBottomTextTwo;
-    TextView mBottomTextThree;
-    TextView mBottomTextFour;
-    TextView mBottomTextFive;
     EditText mDepositAmountEditTxt;
     Button mSendButton;
+    String mAmountSent;
+    int mPotSize = 10000;
+    String mNotification1 = "You have deposited Ksh ";
+    String mNotification2 = "Your remaining Balance is Ksh ";
+    String mNotification3 = "Current Pendo Pot Amount is Ksh ";
+    int chamaPot = mPotSize * 12;
+    int status = 0;
 
     public OneFragment() {
         // Required empty public constructor
@@ -57,9 +55,40 @@ public class OneFragment extends Fragment{
         View layout = inflater.inflate(R.layout.fragment_one, container, false);
         mOneCardView = (CardView) layout.findViewById(R.id.card_one);
         mTwoCardView = (CardView) layout.findViewById(R.id.card_two);
-        mThreeCardView = (CardView) layout.findViewById(R.id.card_three);
-        mFourCardView = (CardView) layout.findViewById(R.id.card_four);
-        mFiveCardView = (CardView) layout.findViewById(R.id.card_five);
+        mUpTextOne = (TextView) layout.findViewById(R.id.up_txt_one);
+        mUpTextTwo = (TextView) layout.findViewById(R.id.up_txt_two);
+        mBottomTextOne = (TextView) layout.findViewById(R.id.down_txt_one);
+        mBottomTextTwo = (TextView) layout.findViewById(R.id.down_txt_two);
+
+
+        mDepositAmountEditTxt = (EditText) layout.findViewById(R.id.deposit_amount_txt);
+        mSendButton = (Button) layout.findViewById(R.id.btnSend);
+
+        mSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              mAmountSent = mDepositAmountEditTxt.getText().toString().trim();
+                int number = 0;
+                if(!mAmountSent.isEmpty()){
+                    String mBalance = String.format("%,d",  mPotSize - Integer.parseInt(mAmountSent));
+                    String mPotBalance = String.format("%,d",  chamaPot + Integer.parseInt(mAmountSent));
+                    if(status == 0){
+                        mUpTextOne.setText(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
+                                + mNotification3 + mPotBalance + ".");
+                        mBottomTextOne.setText(setTime());
+                        mDepositAmountEditTxt.setText("");
+                        mOneCardView.setVisibility(View.VISIBLE);
+                        status ++;
+                        number += 2;
+                    }else if(number == 2){
+                        mUpTextTwo.setText(mNotification1 + mAmountSent + "\n" + mNotification2 + mBalance);
+                        mBottomTextTwo.setText(setTime());
+                        number += 1;
+                    }
+                }
+            }
+        });
+
         return layout;
     }
 
