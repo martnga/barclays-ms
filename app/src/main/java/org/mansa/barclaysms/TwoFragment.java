@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -32,7 +33,7 @@ public class TwoFragment extends Fragment {
     TextView mBottomTextOne;
     TextView mBottomTextTwo;
     EditText mDepositAmountEditTxt;
-    Button mSendButton;
+    ImageView mSendButton;
     String mAmountSent;
     int mPotSize = 1450;
     String mNotification1 = "You have deposited Ksh ";
@@ -63,7 +64,7 @@ public class TwoFragment extends Fragment {
         mBottomTextTwo = (TextView) layout.findViewById(R.id.down_txt_two);
 
         mDepositAmountEditTxt = (EditText) layout.findViewById(R.id.deposit_amount_txt);
-        mSendButton = (Button) layout.findViewById(R.id.btnSend);
+        mSendButton = (ImageView) layout.findViewById(R.id.btnSend);
 
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +85,7 @@ public class TwoFragment extends Fragment {
 
                         new AlertDialog.Builder(getActivity())
                                 .setTitle("Confirmation Pin")
-                                .setMessage("Please Input Your To Proceed")
+                                .setMessage("Please Input Your PIN To Proceed")
                                 .setView(mPIN, 35, 5, 15, 15)
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int whichButton) {
@@ -121,7 +122,7 @@ public class TwoFragment extends Fragment {
 
                         new AlertDialog.Builder(getActivity())
                                 .setTitle("Confirmation Pin")
-                                .setMessage("Please Input Your To Proceed")
+                                .setMessage("Please Input Your PIN To Proceed")
                                 .setView(mPIN, 35, 5, 15, 15)
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int whichButton) {

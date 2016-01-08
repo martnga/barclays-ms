@@ -32,6 +32,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.home);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_menu_white_24dp);
         setSupportActionBar(toolbar);
 
         // Get ListView object from xml
@@ -39,7 +40,7 @@ public class Home extends AppCompatActivity {
 
         // Defined Array values to show in ListView
         String[] values = new String[] {
-                "My Chama",
+                "My Chamas",
                 "My Account"
         };
 

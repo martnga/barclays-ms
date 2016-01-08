@@ -9,6 +9,7 @@
 
     <ScrollView
         android:id="@+id/scrollView"
+        android:background="@drawable/one"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.8"
@@ -19,7 +20,6 @@
                       xmlns:tools="http://schemas.android.com/tools"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:background="#f1f1f1"
                       android:orientation="vertical"
                       tools:context="org.mansa.barclaysms.OneFragment">
 
@@ -400,10 +400,12 @@
 
 
         <EditText
+            android:layout_marginTop="@dimen/pad_2dp"
             android:id="@+id/deposit_amount_txt"
             style="@style/edittext_msg"
             android:layout_width="0dp"
-            android:inputType="numberSigned"
+            android:paddingTop="@dimen/pad_5dp"
+            android:paddingBottom="@dimen/pad_5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/type_msg" >
@@ -411,12 +413,17 @@
 
         </EditText>
 
-        <Button
+        <ImageView
+            android:layout_marginTop="@dimen/pad_2dp"
+            android:contentDescription="@string/action_settings"
+            android:padding="@dimen/pad_7dp"
             android:id="@+id/btnSend"
             style="@style/btn"
+            android:background="@drawable/send_button_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_send_black_24dp" />
+            android:src="@drawable/ic_send_white_24dp" />
+
 
     </LinearLayout>
 
