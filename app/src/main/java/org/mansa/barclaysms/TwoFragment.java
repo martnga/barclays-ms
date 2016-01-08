@@ -65,6 +65,9 @@ public class TwoFragment extends Fragment {
 
         mDepositAmountEditTxt = (EditText) layout.findViewById(R.id.deposit_amount_txt);
         mSendButton = (ImageView) layout.findViewById(R.id.btnSend);
+        InputFilter[] filters = new InputFilter[1];
+        filters[0] = new InputFilter.LengthFilter(5); //Filter to 4 characters
+        mDepositAmountEditTxt.setFilters(filters);
 
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override

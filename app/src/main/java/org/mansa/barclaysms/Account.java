@@ -5,10 +5,14 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputFilter;
+import android.text.method.PasswordTransformationMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -99,19 +103,25 @@ public class Account extends AppCompatActivity{
 
                 switch (itemPosition){
                     case 0:
-                        setAlertDialog("Balance");
+                        setAlertDialog("Account Balance", "Your Account Balance is Ksh 134,500. Thank you for using Barclays MS");
                         break;
                     case 1:
-                        setAlertDialog("Statement");
+                        setAlertDialog("Account Statement","Sent Ksh 4,400 to JOHN DOE MAHINDI\n\n" +
+                                "04/12/2015   Sent Ksh 3,500 to BURU DONAH DIHEM\n\n" +
+                                "04/12/2015   Paid Ksh 14,450 to DUALCOM VENTURES\n\n" +
+                                "12/12/2015   Sent Ksh 400 to BIKO LAS VEGAS\n\n" +
+                                "17/12/2015   Transfered Ksh 56,400 to MUTOKO DILR MISO\n\n" +
+                                "07/01/2016   Sent Ksh 1,400 to CALTECH CHAMA\n\n" +
+                                "08/01/2016   Received Ksh 104,000 from MANDELA BISORO AHMED \n");
                         break;
                     case 2:
-                        setAlertDialog("Payments");
+                        setInputDialog("Payments", "Enter The Amount The Payment");
                         break;
                     case 3:
-                        setAlertDialog("Withdrawal");
+                        setInputDialog("Withdrawal", "Enter The Amount You Want To Withdraw");
                         break;
                     case 4:
-                        setAlertDialog("Transfer to Mpesa");
+                        setInputDialog("Transfer to Mpesa", "Enter The Amount You Want To Transfer To MPesa");
                         break;
 
                 }
@@ -143,8 +153,9 @@ public class Account extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    public void setAlertDialog(String string){
+    public void setAlertDialog(String title,String string){
         AlertDialog.Builder builder = new AlertDialog.Builder(Account.this);
+        builder.setTitle(title);
         builder.setMessage(string);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
@@ -161,6 +172,73 @@ public class Account extends AppCompatActivity{
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    public  void setInputDialog(String title,String string){
+
+        //initialize edit text to get amount received by customer
+        final EditText mPIN = new EditText(Account.this);
+        mPIN.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
+        InputFilter[] filters = new InputFilter[1];
+        filters[0] = new InputFilter.LengthFilter(5); //Filter to 4 characters
+        mPIN.setFilters(filters);
+
+        new android.support.v7.app.AlertDialog.Builder(Account.this)
+                .setTitle(title)
+                .setMessage(string)
+                .setView(mPIN, 35, 5, 15, 15)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        String amountReceived = mPIN.getText().toString();
+
+                        if (!amountReceived.isEmpty()) {
+                            setPinDialog("PIN Confirmation", "Please Input Your PIN To Proceed");
+                        }
+
+
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+
+                    }
+                })
+                .show();
+    }
+
+    public  void setPinDialog(String title,String string){
+
+        //initialize edit text to get amount received by customer
+        final EditText mPIN = new EditText(Account.this);
+        mPIN.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
+        mPIN.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        InputFilter[] filters = new InputFilter[1];
+        filters[0] = new InputFilter.LengthFilter(4); //Filter to 4 characters
+        mPIN.setFilters(filters);
+
+        new android.support.v7.app.AlertDialog.Builder(Account.this)
+                .setTitle(title)
+                .setMessage(string)
+                .setView(mPIN, 35, 5, 15, 15)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        String amountReceived = mPIN.getText().toString();
+
+                        if (!amountReceived.isEmpty()) {
+                            setAlertDialog("Confirmed", "Transaction 3F56643F3D Confirmed. Thank you for using Barclays MS.");
+                        }
+
+
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+
+                    }
+                })
+                .show();
     }
 
 }

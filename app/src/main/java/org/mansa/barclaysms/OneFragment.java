@@ -68,15 +68,19 @@ public class OneFragment extends Fragment{
         mBottomTextOne = (TextView) layout.findViewById(R.id.down_txt_one);
         mBottomTextTwo = (TextView) layout.findViewById(R.id.down_txt_two);
 
-
         mDepositAmountEditTxt = (EditText) layout.findViewById(R.id.deposit_amount_txt);
         mSendButton = (ImageView) layout.findViewById(R.id.btnSend);
+
+        InputFilter[] filters = new InputFilter[1];
+        filters[0] = new InputFilter.LengthFilter(5); //Filter to 4 characters
+        mDepositAmountEditTxt.setFilters(filters);
 
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               mAmountSent = mDepositAmountEditTxt.getText().toString().trim();
                 if(!mAmountSent.isEmpty()){
+                    mAmountSent = String.format("%,d", Integer.parseInt(mAmountSent));
                     final String mBalance = String.format("%,d",  mPotSize - Integer.parseInt(mAmountSent));
                     final String mPotBalance = String.format("%,d",  chamaPot + Integer.parseInt(mAmountSent));
 

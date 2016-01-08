@@ -26,9 +26,6 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         if(Application.getInstance().isCurrentUser()) {
 
             startActivity(new Intent(Login.this, Home.class));
