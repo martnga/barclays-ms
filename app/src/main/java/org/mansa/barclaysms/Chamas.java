@@ -81,4 +81,10 @@ public class Chamas extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
     }
+
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
 }

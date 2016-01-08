@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -30,6 +29,8 @@ public class Account extends AppCompatActivity{
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.list);
@@ -98,19 +99,19 @@ public class Account extends AppCompatActivity{
 
                 switch (itemPosition){
                     case 0:
-
+                        setAlertDialog("Balance");
                         break;
                     case 1:
-
+                        setAlertDialog("Statement");
                         break;
                     case 2:
-
+                        setAlertDialog("Payments");
                         break;
                     case 3:
-
+                        setAlertDialog("Withdrawal");
                         break;
                     case 4:
-
+                        setAlertDialog("Transfer to Mpesa");
                         break;
 
                 }
@@ -156,4 +157,10 @@ public class Account extends AppCompatActivity{
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
 }
