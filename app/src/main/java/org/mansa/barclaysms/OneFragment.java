@@ -28,6 +28,7 @@ import java.util.Calendar;
 
 public class OneFragment extends Fragment{
 
+    CardView mZeroCardView;
     CardView mOneCardView;
     CardView mTwoCardView;
     TextView mUpTextOne;
@@ -62,6 +63,7 @@ public class OneFragment extends Fragment{
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_one, container, false);
         mOneCardView = (CardView) layout.findViewById(R.id.card_one);
+        mZeroCardView = (CardView) layout.findViewById(R.id.card_zero);
         mTwoCardView = (CardView) layout.findViewById(R.id.card_two);
         mUpTextOne = (TextView) layout.findViewById(R.id.up_txt_one);
         mUpTextTwo = (TextView) layout.findViewById(R.id.up_txt_two);
@@ -74,6 +76,13 @@ public class OneFragment extends Fragment{
         InputFilter[] filters = new InputFilter[1];
         filters[0] = new InputFilter.LengthFilter(5); //Filter to 4 characters
         mDepositAmountEditTxt.setFilters(filters);
+
+        mZeroCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setDialog();
+            }
+        });
 
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,12 +111,14 @@ public class OneFragment extends Fragment{
                                         String amountReceived = mPIN.getText().toString();
 
                                         if (!amountReceived.isEmpty()) {
+                                            setAlertDialog(mBalance, mPotBalance);
                                             mUpTextOne.setText(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
                                                     + mNotification3 + mPotBalance + ".");
                                             mBottomTextOne.setText(setTime());
                                             mDepositAmountEditTxt.setText("");
                                             mOneCardView.setVisibility(View.VISIBLE);
                                             status ++;
+
                                         }
 
 
@@ -139,6 +150,7 @@ public class OneFragment extends Fragment{
                                         String amountReceived = mPIN.getText().toString();
 
                                         if (!amountReceived.isEmpty()) {
+                                            setAlertDialog(mBalance, mPotBalance);
                                             mUpTextTwo.setText(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
                                                     + mNotification3 + mPotBalance + ".");
                                             mBottomTextTwo.setText(setTime());
@@ -172,5 +184,36 @@ public class OneFragment extends Fragment{
         return  strDate;
     }
 
+    public void setAlertDialog(final String mBalance, final String mPotBalance){
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
+        builder.setMessage(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
+                + mNotification3 + mPotBalance + ".");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //to close the dialog
+                dialogInterface.dismiss();
+            }
+        });
+
+        android.app.AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void setDialog(){
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
+        builder.setTitle("Chama Notification");
+        builder.setMessage("MILKA BAIDU MISOSA has completed his pot contribution.Current Chama's Pot size is Ksh 155,200.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //to close the dialog
+                dialogInterface.dismiss();
+            }
+        });
+
+        android.app.AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
 }
