@@ -36,7 +36,7 @@ public class Application extends android.app.Application {
         final String authToken = sharedPreferences.getString("ACCOUNT", "");
         ACCOUNTNUMBER += authToken;
 
-        if(ACCOUNTNUMBER == null || ACCOUNTNUMBER.isEmpty() || ACCOUNTNUMBER.length() < 0){
+        if(ACCOUNTNUMBER == null || ACCOUNTNUMBER.isEmpty() || ACCOUNTNUMBER.length() < 1){
             return false;
         }
 

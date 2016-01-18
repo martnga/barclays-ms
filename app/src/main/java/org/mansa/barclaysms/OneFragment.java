@@ -42,6 +42,8 @@ public class OneFragment extends Fragment{
     String mNotification1 = "You have deposited Ksh ";
     String mNotification2 = "Your remaining Balance is Ksh ";
     String mNotification3 = "Current Chama Pot Size is Ksh ";
+    String mNotification4 = "You have completed your Chama contribution. Ksh ";
+    String mNotification5 = " has been fixed to your Virtual Savings account. The more you save the more you earn. Thank you for using Barclays MS";
     int chamaPot = 156202;
     int status = 0;
 
@@ -89,9 +91,13 @@ public class OneFragment extends Fragment{
             public void onClick(View v) {
               mAmountSent = mDepositAmountEditTxt.getText().toString().trim();
                 if(!mAmountSent.isEmpty()){
-                    mAmountSent = String.format("%,d", Integer.parseInt(mAmountSent));
-                    final String mBalance = String.format("%,d",  mPotSize - Integer.parseInt(mAmountSent));
+                    int balance = mPotSize - Integer.parseInt(mAmountSent);
+                     String mBalance = String.format("%,d", balance);
                     final String mPotBalance = String.format("%,d",  chamaPot + Integer.parseInt(mAmountSent));
+                    if (balance < 0) {
+                        mBalance = String.format("%,d", 0  - (balance));
+                    }
+                    mAmountSent = String.format("%,d", Integer.parseInt(mAmountSent));
 
                     if(status == 0){
                         //initialize edit text to get amount received by customer
@@ -102,6 +108,8 @@ public class OneFragment extends Fragment{
                         filters[0] = new InputFilter.LengthFilter(4); //Filter to 4 characters
                         mPIN.setFilters(filters);
 
+                        final String finalMBalance = mBalance;
+                        final String finalMBalance2 = mBalance;
                         new AlertDialog.Builder(getActivity())
                                 .setTitle("Confirmation Pin")
                                 .setMessage("Please Input Your PIN To Proceed")
@@ -111,8 +119,8 @@ public class OneFragment extends Fragment{
                                         String amountReceived = mPIN.getText().toString();
 
                                         if (!amountReceived.isEmpty()) {
-                                            setAlertDialog(mBalance, mPotBalance);
-                                            mUpTextOne.setText(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
+                                            setAlertDialog(finalMBalance, mPotBalance);
+                                            mUpTextOne.setText(mNotification1 + mAmountSent + ". " + mNotification2 + finalMBalance2 + "."
                                                     + mNotification3 + mPotBalance + ".");
                                             mBottomTextOne.setText(setTime());
                                             mDepositAmountEditTxt.setText("");
@@ -141,6 +149,7 @@ public class OneFragment extends Fragment{
                         filters[0] = new InputFilter.LengthFilter(4); //Filter to 4 characters
                         mPIN.setFilters(filters);
 
+                        final String finalMBalance1 = mBalance;
                         new AlertDialog.Builder(getActivity())
                                 .setTitle("Confirmation Pin")
                                 .setMessage("Please Input Your PIN To Proceed")
@@ -150,9 +159,9 @@ public class OneFragment extends Fragment{
                                         String amountReceived = mPIN.getText().toString();
 
                                         if (!amountReceived.isEmpty()) {
-                                            setAlertDialog(mBalance, mPotBalance);
-                                            mUpTextTwo.setText(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
-                                                    + mNotification3 + mPotBalance + ".");
+                                            setSecondDialog(finalMBalance1);
+                                            mUpTextTwo.setText(mNotification1 + mAmountSent + "." + mNotification4 + finalMBalance1 + ""
+                                                    + mNotification5 + ".");
                                             mBottomTextTwo.setText(setTime());
                                             mDepositAmountEditTxt.setText("");
                                             mTwoCardView.setVisibility(View.VISIBLE);
@@ -186,8 +195,26 @@ public class OneFragment extends Fragment{
 
     public void setAlertDialog(final String mBalance, final String mPotBalance){
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
+        builder.setTitle("Chama Notification");
         builder.setMessage(mNotification1 + mAmountSent + ". " + mNotification2 + mBalance + "."
                 + mNotification3 + mPotBalance + ".");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //to close the dialog
+                dialogInterface.dismiss();
+            }
+        });
+
+        android.app.AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void setSecondDialog(final String mBalance){
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
+        builder.setTitle("Chama Notification");
+        builder.setMessage(mNotification1 + mAmountSent + ". " + mNotification4 + mBalance + ""
+                + mNotification5 + ".");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

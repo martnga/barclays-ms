@@ -19,7 +19,9 @@
         android:layout_marginStart="@dimen/pad_5dp"
         android:layout_marginEnd="@dimen/pad_15dp"
         android:layout_marginTop="@dimen/pad_40dp"
+        android:maxLength="10"
         android:hint="Account Number"
+        android:fontFamily="sans-serif-light"
         android:ems="10"
         android:id="@+id/account_number_editText"/>
 
@@ -29,7 +31,9 @@
         android:layout_height="wrap_content"
         android:inputType="numberPassword"
         android:textAlignment="center"
+        android:maxLength="4"
         android:layout_marginStart="@dimen/pad_5dp"
+        android:fontFamily="sans-serif-light"
         android:layout_marginEnd="@dimen/pad_15dp"
         android:layout_marginTop="@dimen/pad_10dp"
         android:hint="PIN"
@@ -43,7 +47,7 @@
         android:text="Login"
         android:fontFamily="sans-serif-light"
         android:textColor="@color/colorPrimary"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/edit_text_border"
         android:textSize="25sp"
         android:layout_marginTop="@dimen/pad_55dp"
         android:layout_marginRight="@dimen/pad_90dp"

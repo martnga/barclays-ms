@@ -7,4 +7,13 @@
         <item>Pendo</item>
         <item>Caltech</item>
     </string-array>
+
+    <string name="navigation_item_1">Home</string>
+    <string name="navigation_item_2">Events</string>
+    <string name="change_pin">Change Pin</string>
+    <string name="quit_chama">Quit Chama</string>
+    <string name="logout">Logout</string>
+    <string name="closeDrawer">Navigation View</string>
+    <string name="openDrawer">Navigation View Closed</string>
+
 </resources>

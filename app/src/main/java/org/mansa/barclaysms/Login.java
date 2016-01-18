@@ -41,7 +41,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                  if(!ifPinEmpty() && !ifAccountEmpty()){
                      String account = mAccountNumber.getText().toString().trim();
-                     saveCredentials(account);
+                     String pin = mPin.getText().toString().trim();
+                     saveCredentials(account, pin);
                      startActivity(new Intent(Login.this, Home.class));
                  }
             }
@@ -74,13 +75,18 @@ public class Login extends AppCompatActivity {
         return b;
     }
 
-    public void saveCredentials(String string){
+    public void saveCredentials(String account, String pin){
 
         //saving credentials in shared preferences
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("ACCOUNT", string);
+        editor.putString("ACCOUNT", account);
+        editor.putString("PIN", pin);
         editor.commit();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }
